@@ -9,8 +9,24 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
+//@NoArgsConstructor
 public class Product {
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;

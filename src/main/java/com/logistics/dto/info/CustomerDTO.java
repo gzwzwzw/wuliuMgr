@@ -1,23 +1,9 @@
-package com.logistics.model;
+package com.logistics.dto.info;
 
-import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-
-import java.util.List;
-
-@Entity
 @Data
-@NoArgsConstructor
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long customerId;
-    private String name;
-    private String address;
-    private String contactPerson;
-
+public class CustomerDTO {
     public String getName() {
         return name;
     }
@@ -50,9 +36,8 @@ public class Customer {
         this.contactPerson = contactPerson;
     }
 
-
-
-
-    @OneToMany(mappedBy = "customer")
-    private List<Orders> orders;
+    private Long customerId;
+    private String name;
+    private String address;
+    private String contactPerson;
 }
